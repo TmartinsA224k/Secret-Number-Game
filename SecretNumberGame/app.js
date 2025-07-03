@@ -1,7 +1,7 @@
 let listOfDrawnNumbers = [];   
 let limitNumber = 100;
 let secretNumber = randomNumberGenarator();  
-console.log(secretNumber);
+//console.log(secretNumber);
 
 let attempts = 1;
 
@@ -16,7 +16,7 @@ displayTextOnScreen("p", `Choose a number between 1 to ${limitNumber}`);
 function checkGuess(){
     let guess = document.querySelector("input").value;
     if (secretNumber == guess) {
-        console.log(secretNumber == secretNumber);
+        //console.log(secretNumber == secretNumber);
         displayTextOnScreen("h1", "GREAT!");
         let wordAttempts = attempts > 1 ? "attempts" : "attempt";
         // transforms a regular string into one that can be used as a variable.
@@ -39,9 +39,9 @@ function checkGuess(){
 
 function randomNumberGenarator() {
     let chosenNumber = parseInt(Math.random() * limitNumber + 1);
-    let quantidadeDeElementosNaLista = listOfDrawnNumbers.length;
+    let amountOfElementsInList = listOfDrawnNumbers.length;
 
-    if (quantidadeDeElementosNaLista == limitNumber) {
+    if (amountOfElementsInList == limitNumber) {
         listOfDrawnNumbers = [];
     }
 
@@ -49,7 +49,7 @@ function randomNumberGenarator() {
         return randomNumberGenarator();
     } else {
         listOfDrawnNumbers.push(chosenNumber);
-        console.log(listOfDrawnNumbers);
+        //console.log(listOfDrawnNumbers);
         return chosenNumber;
     }
 }
@@ -68,7 +68,7 @@ function initialMessage() {
 
 function restartGame() {
     secretNumber = randomNumberGenarator();
-    console.log(secretNumber);
+    //console.log(secretNumber);
     clearInput();
     attempts = 1;
     initialMessage();
